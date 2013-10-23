@@ -7,9 +7,20 @@
 //  MIT Licensed
 //
 
-  module.exports = {
+//This was adapted by JM Huret, 10/20/13, to operate with requireJS like many other Cordova Plugins
+
+cordova.define("canvas2ImagePlugin", function(require, exports, module) {
+    var exec = require('cordova/exec');
     
-    saveImageDataToLibrary:function(successCallback, failureCallback, canvasId) {
+    /**
+     * This class exposes the ability to take a Screenshot to JavaScript
+     */
+    var Canvas2ImagePlugin = function() {};
+
+    /**
+     * Save the screenshot to the user's Photo Library
+     */
+    Canvas2ImagePlugin.prototype.saveImageDataToLibrary = function(successCallback, failureCallback, canvasId) {
         // successCallback required
         if (typeof successCallback != "function") {
             console.log("Canvas2ImagePlugin Error: successCallback is not a function");
@@ -23,5 +34,15 @@
             return cordova.exec(successCallback, failureCallback, "Canvas2ImagePlugin","saveImageDataToLibrary",[imageData]);
         }
     }
-  };
-  
+
+    var canvas2ImagePlugin = new Canvas2ImagePlugin();
+    module.exports = canvas2ImagePlugin;
+
+});
+
+if (!window.plugins) {
+    window.plugins = {};
+}
+if (!window.plugins.canvas2ImagePlugin) {
+    window.plugins.canvas2ImagePlugin = cordova.require("canvas2ImagePlugin");
+}
