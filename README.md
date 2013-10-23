@@ -8,10 +8,11 @@ Installation
 
 ### For Cordova 3.0.x:
 
-1. To add this plugin just type: `cordova plugin add https://github.com/devgeeks/Canvas2ImagePlugin.git` or `phonegap local plugin add https://github.com/devgeeks/Canvas2ImagePlugin.git`
-2. To remove this plugin type: `cordova plugin remove org.devgeeks.Canvas2ImagePlugin` or `phonegap local plugin remove org.devgeeks.Canvas2ImagePlugin`
+Use the Canvas2ImagePlugin created by devgeeks.  This fork is an adaptation to work with requireJS and Cordova 2.6
 
-### NOTE: For older versions of Cordova (You will probably have to use tag 0.2.0)
+### For Cordova 2.6:
+
+Download the javascript file in the www folder.  Include via requireJS, and follow other existing procedures for including the ios or android plugin files.
 
 Usage:
 ------
