@@ -4,8 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Calendar;
 
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.api.*;
 
 import org.json.JSONArray;
 import org.json.JSONException;
